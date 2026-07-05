@@ -1,5 +1,6 @@
 # Mini projet - Windows Listening Ports Audit
 
+Suite à l'achat d'un nouveau PC j'ai refais un auto diagnostique de mes ports.  
 J'ai fait ce mini projet qui reprend la procédure que j'ai utilisé pour faire l'audit de mes ports, et identifier quoi sécuriser. Les ports sont fictifs.
 
 Following the purchase of a new PC, I performed an auto-diagnostic of my ports.
@@ -13,9 +14,10 @@ I did this mini project that follows the procedure I used to audit my ports and 
 - Git
 
 ## objectif
-Le script génère un fichier CSV contenant les ports d’écoute TCP.  
 
-The script generates a CSV file containing listening TCP ports.  
+Faire un script qui génère un fichier CSV contenant les ports d’écoute TCP.  
+
+Make a script that generates a CSV file containing listening TCP ports.  
 
 # instructions
 ## 1. Créer le projet
