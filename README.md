@@ -27,9 +27,9 @@ mkdir windows-listening-ports-audit
 cd windows-listening-ports-audit  
 mkdir scripts  results  doc   
 
-New-Item README.md
-New-Item scripts\audit_ports.ps1
-New-Item docs\recommendations.md
+New-Item README.md  
+New-Item scripts\audit_ports.ps1  
+New-Item docs\recommendations.md  
 
 ## 2. Créer le script d'audit
 
