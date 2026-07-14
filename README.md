@@ -19,8 +19,7 @@ Make a script that generates a CSV file containing listening TCP ports.
 
 # Instructions
 ## 1. Créer le script d'audit
-
-Dans PowerShell   
+  
 mkdir windows-listening-ports-audit  
 cd windows-listening-ports-audit  
 mkdir scripts  results  docs  
@@ -54,6 +53,30 @@ Lister les ports :
 Get-NetTCPConnection -State Listen |  
 Sort-Object LocalPort |  
 Format-Table LocalAddress,LocalPort  
+
+###  Analyse des port
+
+**FR**  
+Une fois le fichier CSV généré, analyser les ports :  
+- Les ports 135, 139, 445 : services Windows (RPC/NetBIOS/SMB), à bloquer sur interface publique
+- Les ports 80/443 : services web.  
+- Les ports 22/3389 : accès distant (SSH/RDP), à sécuriser  
+- Les ports > 49152 : ports dynamiques, généralement sans risque
+- Tout port inconnu : identifier le processus avec : 
+
+  Get-NetTCPConnection -State Listen | Select-Object LocalPort, OwningProcess
+
+
+**EN**  
+After generating the CSV, analyze the ports:  
+- Ports 135, 139, 445 → Windows services (RPC/NetBIOS/SMB), block on public interfaces.  
+- Ports 80/443 → web services.  
+- Ports 22/3389 → remote access (SSH/RDP), must be secured.  
+- Ports > 49152 → dynamic ports, usually safe.  
+- Unknown ports → identify the process with:  
+
+  Get-NetTCPConnection -State Listen | Select-Object LocalPort, OwningProcess
+
 
 enfin, applique les recommandations conseillées par l'ANSSI 
 
